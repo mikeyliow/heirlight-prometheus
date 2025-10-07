@@ -2,7 +2,11 @@
 
 echo "Starting Prometheus with environment variable substitution..."
 echo "GRAFANA_USERNAME is set: $([ -n "$GRAFANA_USERNAME" ] && echo "YES" || echo "NO")"
+echo "GRAFANA_USERNAME value: $GRAFANA_USERNAME"
 echo "GRAFANA_PASSWORD is set: $([ -n "$GRAFANA_PASSWORD" ] && echo "YES" || echo "NO")"
+echo "GRAFANA_PASSWORD length: ${#GRAFANA_PASSWORD}"
+echo "GRAFANA_PASSWORD starts with: $(echo "$GRAFANA_PASSWORD" | cut -c1-10)..."
+echo "GRAFANA_PASSWORD ends with: ...$(echo "$GRAFANA_PASSWORD" | tail -c 5)"
 echo "AEGIS is set: $([ -n "$AEGIS" ] && echo "YES" || echo "NO")"
 echo "AEGIS_PORT is set: $([ -n "$AEGIS_PORT" ] && echo "YES" || echo "NO")"
 
